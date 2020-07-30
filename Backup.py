@@ -1,10 +1,11 @@
 import os
-import time
 import hashlib
+import shutil
+import errno
 
 BLOCK_SIZE = 65536
 WORKING_PATH = 'C:\\Users\\wesle\\Desktop\\Colebrooke\\'
-BACKUP_PATH = 'C:\\Users\\wesle\\Desktop\\Colebrooke_2\\'
+BACKUP_PATH = 'C:\\Users\\wesle\\Desktop\\Colebrooke 2\\'
 TEST_PATH = 'C:\\Users\\wesle\\Desktop\\Software Dev\\Backup Program\\'
 
 #-------------------------------------------------------------------------------
@@ -62,5 +63,5 @@ for key, value in workingDict.items():
 print("---------")
 
 updateDict = compareDicts(workingDict, backupDict)
-for key in updateDict:
-    print(updateDict[key])
+for key, value in updateDict.items():
+    print(f"Copying File: {value}")
